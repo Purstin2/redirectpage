@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="refresh" content="8;url=https://ultrapack3d.com">
+<title>Novo Endereço — UltraPack 3D</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --orange: #FF5C00;
+    --orange-glow: #ff5c0044;
+    --dark: #0a0a0a;
+    --card: #111111;
+    --border: #222222;
+    --text: #f0f0f0;
+    --muted: #888;
+  }
+
+  body {
+    background: var(--dark);
+    color: var(--text);
+    font-family: 'DM Sans', sans-serif;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    position: relative;
+  }
+
+  /* background grid */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image:
+      linear-gradient(var(--border) 1px, transparent 1px),
+      linear-gradient(90deg, var(--border) 1px, transparent 1px);
+    background-size: 60px 60px;
+    opacity: 0.35;
+    z-index: 0;
+  }
+
+  /* orange glow blob */
+  body::after {
+    content: '';
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, var(--orange-glow) 0%, transparent 70%);
+    z-index: 0;
+    animation: pulse 4s ease-in-out infinite;
+  }
+
+  @keyframes pulse {
+    0%, 100% { opacity: 0.6; transform: translate(-50%, -50%) scale(1); }
+    50% { opacity: 1; transform: translate(-50%, -50%) scale(1.15); }
+  }
+
+  .card {
+    position: relative;
+    z-index: 1;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 60px 48px;
+    max-width: 560px;
+    width: 90%;
+    text-align: center;
+    box-shadow: 0 0 80px var(--orange-glow), 0 32px 64px rgba(0,0,0,0.6);
+    animation: fadeUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) both;
+  }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .badge {
+    display: inline-block;
+    background: var(--orange-glow);
+    border: 1px solid var(--orange);
+    color: var(--orange);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    padding: 5px 14px;
+    border-radius: 999px;
+    margin-bottom: 28px;
+  }
+
+  .icon {
+    font-size: 52px;
+    line-height: 1;
+    margin-bottom: 20px;
+    display: block;
+    animation: bounce 2s ease-in-out infinite;
+  }
+
+  @keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-8px); }
+  }
+
+  h1 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(2.2rem, 6vw, 3.2rem);
+    letter-spacing: 0.03em;
+    line-height: 1.05;
+    margin-bottom: 16px;
+    color: #fff;
+  }
+
+  h1 span {
+    color: var(--orange);
+  }
+
+  p.sub {
+    color: var(--muted);
+    font-size: 15px;
+    line-height: 1.6;
+    margin-bottom: 36px;
+  }
+
+  .domain-box {
+    background: #0d0d0d;
+    border: 1px solid var(--orange);
+    border-radius: 10px;
+    padding: 16px 24px;
+    margin-bottom: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+  }
+
+  .domain-box .dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--orange);
+    animation: blink 1.2s ease-in-out infinite;
+  }
+
+  @keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.2; }
+  }
+
+  .domain-box span {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.6rem;
+    letter-spacing: 0.08em;
+    color: var(--orange);
+  }
+
+  /* progress bar */
+  .progress-wrap {
+    margin-bottom: 12px;
+  }
+
+  .progress-label {
+    font-size: 12px;
+    color: var(--muted);
+    margin-bottom: 8px;
+    text-align: left;
+  }
+
+  .progress-bar {
+    height: 4px;
+    background: var(--border);
+    border-radius: 999px;
+    overflow: hidden;
+  }
+
+  .progress-fill {
+    height: 100%;
+    background: var(--orange);
+    border-radius: 999px;
+    width: 0%;
+    animation: fill 8s linear forwards;
+  }
+
+  @keyframes fill {
+    to { width: 100%; }
+  }
+
+  .cta {
+    display: inline-block;
+    margin-top: 24px;
+    background: var(--orange);
+    color: #fff;
+    font-weight: 700;
+    font-size: 15px;
+    padding: 14px 36px;
+    border-radius: 8px;
+    text-decoration: none;
+    letter-spacing: 0.03em;
+    transition: background 0.2s, transform 0.2s;
+  }
+
+  .cta:hover {
+    background: #ff7a2e;
+    transform: scale(1.03);
+  }
+
+  .footer-note {
+    margin-top: 24px;
+    font-size: 12px;
+    color: #444;
+  }
+</style>
+</head>
+<body>
+<div class="card">
+  <span class="badge">⚡ Aviso importante</span>
+  <span class="icon">📦</span>
+  <h1>Mudamos de <span>domínio!</span></h1>
+  <p class="sub">
+    Hey! Nosso site ganhou um endereço novo e mais poderoso.<br>
+    Você será redirecionado automaticamente em instantes.
+  </p>
+
+  <div class="domain-box">
+    <div class="dot"></div>
+    <span>ultrapack3d.com</span>
+  </div>
+
+  <div class="progress-wrap">
+    <div class="progress-label">Redirecionando em 8 segundos…</div>
+    <div class="progress-bar">
+      <div class="progress-fill"></div>
+    </div>
+  </div>
+
+  <a class="cta" href="https://ultrapack3d.com">Ir agora →</a>
+
+  <p class="footer-note">Se não for redirecionado, clique no botão acima.</p>
+</div>
+</body>
+</html>
